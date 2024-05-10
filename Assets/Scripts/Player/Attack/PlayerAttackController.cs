@@ -20,7 +20,7 @@ public class PlayerAttackController : MonoBehaviour
     {
         AttackStateMachine = new AttackStateMachine();
         GroundCombo1 = new GroundCombo1(this,AttackStateMachine,_playerInput,_animator,0.5f,1);
-        GroundCombo2 = new GroundCombo2(this,AttackStateMachine,_playerInput,_animator,0.5f,2);
+        GroundCombo2 = new GroundCombo2(this,AttackStateMachine,_playerInput,_animator,0.75f,2);
         GroundCombo3 = new GroundCombo3(this,AttackStateMachine,_playerInput,_animator,0.75f,3);
         GroundIdle = new GroundIdle(this, AttackStateMachine, _playerInput, _animator, 0, 0);
         AttackStateMachine.StartState(new GroundIdle(this,AttackStateMachine,_playerInput,_animator,0,0));
