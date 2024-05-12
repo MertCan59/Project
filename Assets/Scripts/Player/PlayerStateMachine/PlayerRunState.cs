@@ -2,21 +2,22 @@ using UnityEngine;
 
 public class PlayerRunState : PlayerMovementState
 {
-    public PlayerRunState(PlayerMovementStateMachine PlayerMovementStateMachine, PlayerMovementController PlayerMovementController, PlayerInput PlayerInput,Rigidbody2D rigidbody,Transform transform,float speed) : base(PlayerMovementStateMachine, PlayerMovementController, PlayerInput)
+    public PlayerRunState(PlayerMovementStateMachine PlayerMovementStateMachine, PlayerMovementController PlayerMovementController, PlayerInput PlayerInput,float speed) : base(PlayerMovementStateMachine, PlayerMovementController, PlayerInput)
     {
         this.speed = speed;
-        this.rigidbody = rigidbody;
-        _transform = transform;
+
     }
 
     private bool isFacingRight;
-    private Rigidbody2D rigidbody;
     private float speed;
     private Transform _transform;
+    private Rigidbody2D rigidbody;
     
     public override void OnEnter()
     {
         base.OnEnter();
+        rigidbody = GetComponent<Rigidbody2D>();
+        _transform = GetComponent<Transform>();
         isFacingRight = true;
         Debug.Log("Entered Run State");
     }

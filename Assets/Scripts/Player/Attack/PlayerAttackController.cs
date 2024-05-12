@@ -10,7 +10,7 @@ public class PlayerAttackController : MonoBehaviour
     public GroundCombo1 GroundCombo1;
     public GroundCombo2 GroundCombo2;
     public GroundCombo3 GroundCombo3;
-    private void Awake()
+    private void Awake()    
     {
         _playerInput = new PlayerInput();
         _animator = GetComponent<Animator>();

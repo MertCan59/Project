@@ -35,4 +35,9 @@ public abstract class PlayerMovementState
     }
     public virtual void OnFixedUpdate(){}
     public virtual void OnExit(){}
+
+    protected T GetComponent<T>() where T : Component
+    {
+        return PlayerMovementController.GetComponent<T>();
+    }
 }
